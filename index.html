@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Capital campaign film proposal for PENCIL Foundation. Laws of Ace Films, Nashville.">
+<style>
+  html { color-scheme: light; }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+<title>PENCIL Campaign Film</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Archivo:wght@400;500;600&display=swap">
+
+<style>
+  /* ------------------------------------------------------------------
+     SCHEME. Every color on the page resolves from this block.
+     To re-skin for another client, change these values and nothing else.
+     ------------------------------------------------------------------ */
+  :root {
+    --paper:      #FFFFFF;
+    --paper-alt:  #F2F3F6;
+    --ink:        #101319;
+    --ink-2:      #454A55;
+    --ink-3:      #82868F;
+    --rule:       #CACDD4;
+    --rule-hair:  #E3E5EA;
+    --accent:     #17335E;
+    --accent-alt: #DCE4F1;
+    --accent-solid: #17335E;   /* panel ground; never remapped */
+    --video-bg:   #0B0C0C;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); text-decoration: none; box-shadow: inset 0 -1px 0 var(--rule); }
+  a:hover { box-shadow: inset 0 -1px 0 var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  /* ---------- shell ---------- */
+
+  section, header { position: relative; }
+
+  .wrap {
+    --gut: clamp(3.25rem, 6.5vw, 5.5rem);
+    max-width: 76rem;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 3.5rem) 0 var(--gut);
+    position: relative;
+  }
+
+  /* the spine: one continuous accent rule the whole document hangs from */
+  .wrap::before {
+    content: "";
+    position: absolute;
+    left: calc(var(--gut) - 1.85rem);
+    top: 0; bottom: 0; width: 3px;
+    background: var(--accent);
+  }
+
+  /* every section is a labeled row: sticky rail on the left, content right */
+  .row {
+    display: grid;
+    grid-template-columns: 12rem minmax(0, 1fr);
+    gap: 0 clamp(2rem, 5vw, 4.5rem);
+    padding: clamp(3rem, 6vw, 5rem) 0;
+    border-top: 1px solid var(--rule);
+    position: relative;
+  }
+  /* a tick where each section meets the spine */
+  .row::before {
+    content: "";
+    position: absolute;
+    left: calc(-1.85rem - 3px); top: -1px;
+    width: 1.85rem; height: 3px;
+    background: var(--accent);
+  }
+  .row > .rail {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+    line-height: 1.5;
+  }
+  .row > .body { max-width: 42rem; }
+  .row.full > .body { max-width: none; }
+  @media (max-width: 56rem) {
+    .wrap { --gut: 2.5rem; }
+    .wrap::before { left: 0.75rem; width: 2px; }
+    .row::before { left: calc(-1.75rem + 0.75rem - 2px); width: 1.05rem; height: 2px; }
+    .row { grid-template-columns: 1fr; gap: 1.25rem; }
+    .row > .rail { position: static; }
+  }
+
+  .tint { background: var(--paper-alt); }
+  .tint .wrap > .row { border-top-color: var(--rule-hair); }
+  .tint .wrap > .row:first-child { border-top: 0; }
+  .tint .wrap > .row:first-child::before { display: none; }
+
+  /* the one full-color panel, at the close */
+  .invert {
+    background: var(--accent-solid);
+    --ink: #FFFFFF;
+    --ink-2: #C8D4E6;
+    --ink-3: #93A4BF;
+    --rule: rgba(255, 255, 255, 0.38);
+    --rule-hair: rgba(255, 255, 255, 0.16);
+    --accent: #FFFFFF;
+    color: var(--ink);
+  }
+  .invert .wrap::before { background: rgba(255, 255, 255, 0.4); }
+  .invert .wrap > .row:first-child { border-top: 0; }
+  .invert .wrap > .row:first-child::before { display: none; }
+  .invert a { color: #FFFFFF; box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5); }
+  .invert a:hover { box-shadow: inset 0 -1px 0 #FFFFFF; }
+
+  /* ---------- type ---------- */
+
+  h1, h2, .display {
+    font-family: "Bodoni Moda", Didot, "Times New Roman", serif;
+    font-weight: 400;
+    margin: 0;
+    text-wrap: balance;
+  }
+  h1 { font-size: clamp(2.4rem, 6.4vw, 4.6rem); line-height: 1.02; letter-spacing: -0.012em; }
+  h2 { font-size: clamp(1.75rem, 3.4vw, 2.6rem); line-height: 1.12; letter-spacing: -0.006em; }
+
+  h3 {
+    font-family: "Archivo", sans-serif; font-weight: 600;
+    font-size: 1rem; line-height: 1.35; margin: 0; letter-spacing: -0.005em;
+  }
+
+  p { margin: 0 0 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+  .lede { font-size: 1.1875rem; line-height: 1.55; color: var(--ink); margin-bottom: 1.6rem; }
+  .body > h2 + p { margin-top: 1.6rem; }
+  .sub { color: var(--ink-2); }
+  .fine { font-size: 0.875rem; color: var(--ink-3); line-height: 1.55; }
+
+  /* ---------- masthead ---------- */
+
+  .masthead { padding: clamp(1.75rem, 4vw, 2.75rem) 0 clamp(3.5rem, 8vw, 6rem); }
+
+  .colophon {
+    display: flex; flex-wrap: wrap; gap: 0.6rem 2.5rem;
+    padding-bottom: clamp(3.5rem, 10vw, 7rem);
+    font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.09em;
+    text-transform: uppercase; color: var(--ink-3);
+  }
+  .colophon b { color: var(--ink); font-weight: 600; }
+
+  h1 .q { color: var(--rule); }
+  .attrib {
+    margin: 1.75rem 0 0; font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-3);
+  }
+
+  .standfirst {
+    margin-top: clamp(2.5rem, 6vw, 4rem);
+    display: grid; grid-template-columns: 12rem minmax(0, 1fr);
+    gap: 0 clamp(2rem, 5vw, 4.5rem);
+    padding-top: 2rem; border-top: 1px solid var(--rule);
+  }
+  .standfirst .k {
+    font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.09em;
+    text-transform: uppercase; color: var(--ink-3);
+  }
+  .standfirst p { max-width: 40rem; font-size: 1.125rem; line-height: 1.55; }
+  @media (max-width: 56rem) {
+    .standfirst { grid-template-columns: 1fr; gap: 1rem; }
+  }
+
+  /* ---------- the scale line ---------- */
+
+  .scale {
+    font-family: "Bodoni Moda", Didot, serif;
+    font-size: clamp(1.5rem, 3.1vw, 2.25rem);
+    line-height: 1.35; letter-spacing: -0.005em;
+    color: var(--ink); margin: 0 0 1.75rem;
+  }
+  .scale span { color: var(--ink-3); }
+
+  /* ---------- pull quote ---------- */
+
+  .pull {
+    margin: 2.25rem 0; padding: 0.15rem 0 0.15rem 1.5rem;
+    border-left: 3px solid var(--accent);
+    font-family: "Bodoni Moda", Didot, serif;
+    font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+    font-style: italic; line-height: 1.4;
+  }
+  .pull p { margin: 0; }
+  .pull footer {
+    margin-top: 0.9rem; font-family: "Archivo", sans-serif; font-style: normal;
+    font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.09em;
+    text-transform: uppercase; color: var(--ink-3);
+  }
+
+  /* ---------- samples ---------- */
+
+  .samples {
+    display: grid; gap: 2.75rem 2.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .sample.feature { grid-column: 1 / -1; }
+  .sample.feature h3 { font-size: 1.125rem; }
+  .sample.feature > p:last-child { max-width: 42rem; }
+  @media (max-width: 58rem) { .samples { grid-template-columns: minmax(0, 1fr); } }
+  .frame {
+    aspect-ratio: 16 / 9; width: 100%; background: var(--video-bg);
+    overflow: hidden; margin-bottom: 1rem;
+  }
+  .frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+  .sample .tagline {
+    font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.09em;
+    text-transform: uppercase; color: var(--ink-3); margin: 0.4rem 0 0.7rem;
+  }
+  .sample p:last-child { color: var(--ink-2); font-size: 0.9688rem; }
+
+  /* ---------- interview questions ---------- */
+
+  .qgroup + .qgroup { margin-top: 2.5rem; }
+  .qgroup > h3 {
+    font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.09em;
+    text-transform: uppercase; color: var(--accent);
+    padding-bottom: 0.7rem; border-bottom: 1px solid var(--rule);
+  }
+  .qgroup ol { margin: 0; padding: 0; list-style: none; counter-reset: q; }
+  .qgroup li {
+    counter-increment: q; display: grid; grid-template-columns: 1.75rem 1fr;
+    gap: 0 0.5rem; padding: 0.95rem 0; border-bottom: 1px solid var(--rule-hair);
+    font-size: 1rem; line-height: 1.5;
+  }
+  .qgroup li::before {
+    content: counter(q, decimal-leading-zero);
+    font-size: 0.75rem; font-weight: 600; color: var(--ink-3);
+    font-variant-numeric: tabular-nums; padding-top: 0.24rem;
+  }
+
+  /* ---------- tiers ---------- */
+
+  .tiers {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--ink);
+  }
+  .tier {
+    padding: 1.75rem 1.5rem 2rem 0;
+    display: flex; flex-direction: column; gap: 1.1rem;
+  }
+  .tier + .tier { border-left: 1px solid var(--rule-hair); padding-left: 1.5rem; }
+  .tier.lead { background: var(--accent-alt); padding-left: 1.5rem; padding-right: 1.5rem; }
+  .tier.lead + .tier { border-left: 0; padding-left: 1.5rem; }
+  .tier .tag {
+    font-size: 0.625rem; font-weight: 600; letter-spacing: 0.11em;
+    text-transform: uppercase; color: var(--ink-3);
+  }
+  .tier.lead .tag { color: var(--accent); }
+  .tier .name { font-size: 0.9375rem; font-weight: 600; margin-top: 0.3rem; }
+  .tier .price {
+    font-family: "Bodoni Moda", Didot, serif; font-size: 2.4rem;
+    line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -0.015em;
+  }
+  .tier .carry {
+    font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--ink-3);
+    padding-bottom: 0.85rem; border-bottom: 1px solid var(--rule);
+    margin: 0;
+  }
+  .tier ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.65rem; }
+  .tier li { font-size: 0.9063rem; line-height: 1.45; color: var(--ink-2); }
+  @media (max-width: 60rem) {
+    .tiers { grid-template-columns: 1fr; }
+    .tier { padding: 1.5rem 0; border-top: 1px solid var(--rule-hair); }
+    .tier + .tier { border-left: 0; padding-left: 0; }
+    .tier.lead { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .tier.lead + .tier { padding-left: 0; }
+  }
+
+  /* ---------- key/value lists ---------- */
+
+  .kv { margin: 0; padding: 0; }
+  .kv > div {
+    display: grid; grid-template-columns: 10.5rem minmax(0, 1fr);
+    gap: 0.3rem 1.5rem; padding: 1.05rem 0;
+    border-bottom: 1px solid var(--rule-hair); font-size: 0.9688rem;
+  }
+  .kv > div:first-child { border-top: 1px solid var(--rule); }
+  .kv dt {
+    font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.09em;
+    text-transform: uppercase; color: var(--ink-3); padding-top: 0.28rem;
+  }
+  .kv dd { margin: 0; color: var(--ink-2); }
+  @media (max-width: 42rem) { .kv > div { grid-template-columns: 1fr; } }
+
+  .needs { margin: 0; padding: 0; list-style: none; }
+  .needs li {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.3rem 1.5rem; align-items: baseline;
+    padding: 0.95rem 0; border-bottom: 1px solid var(--rule-hair); font-size: 0.9688rem;
+  }
+  .needs li:first-child { border-top: 1px solid var(--rule); }
+  .needs .when {
+    font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.09em;
+    text-transform: uppercase; color: var(--ink-3); white-space: nowrap;
+  }
+
+  /* ---------- close ---------- */
+
+  .signoff { font-size: 0.9688rem; line-height: 1.85; margin-top: 2rem; }
+  .signoff b { font-weight: 600; }
+  .signoff .role { color: var(--ink-2); }
+
+  .colophon-end {
+    border-top: 1px solid var(--rule); padding: 1.75rem 0 3.5rem;
+    font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.09em;
+    text-transform: uppercase; color: var(--ink-3);
+    display: flex; flex-wrap: wrap; gap: 0.5rem 2.5rem;
+  }
+</style>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="colophon">
+      <span><b>Laws of Ace Films</b>, Nashville</span>
+      <span>For PENCIL Foundation</span>
+      <span>Capital Campaign Film, September 2026</span>
+    </div>
+
+    <h1><span class="q">&ldquo;</span>Public education is everybody&rsquo;s business.<span class="q">&rdquo;</span></h1>
+    <p class="attrib">PENCIL Foundation, in its own words</p>
+
+    <div class="standfirst">
+      <div class="k">Why that sentence</div>
+      <p>
+        It is already the campaign. It is the reason a person with no children in Metro
+        schools should care about a building on the other side of town. This film is
+        built to make that argument land in a room where the ask is large.
+      </p>
+    </div>
+  </div>
+</header>
+
+<section class="tint">
+  <div class="wrap">
+    <div class="row">
+      <div class="rail">What we heard</div>
+      <div class="body">
+        <h2>The reach is the story. So is the range.</h2>
+
+        <p class="scale">
+          159 schools. 81,851 students. 500 square miles.
+          <span>Forty-four years of it.</span>
+        </p>
+
+        <p class="lede">
+          PENCIL links community resources to Nashville public schools so young people
+          achieve academic success and prepare for life. Time, treasure, and talent, moved
+          through a collective impact model.
+        </p>
+        <p class="sub">
+          That geography is the honest answer to the representation question. Diversity
+          here is not only who is on camera. It is diversity of need, school to school,
+          from one edge of the county to the other. A campaign film that shows the range
+          of the map shows the range of the need without having to say so.
+        </p>
+
+        <blockquote class="pull">
+          <p>After 44 years, PENCIL is the soft landing place for any adult who wants to
+          get involved with MNPS.</p>
+          <footer>PENCIL Foundation</footer>
+        </blockquote>
+
+        <p class="sub">
+          The work already has a vocabulary: PENCIL Partners, the DG PENCIL Box,
+          Connected Literacy Tutors, Principal for a Day. The film uses PENCIL&rsquo;s
+          language, not a translation of it.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="row">
+      <div class="rail">The film</div>
+      <div class="body">
+        <h2>A case for support, built as a transformation story.</h2>
+        <p class="lede">
+          A school Metro closed, brought back by the community Metro serves. The building
+          carries the narrative. The testimonials are seasoning, not the spine.
+        </p>
+        <p class="sub">
+          This matters for one specific reason. PENCIL already owns a board and community
+          testimonial series on the endowment page. A campaign film that is mostly talking
+          heads is a second version of an asset PENCIL already has. Structuring around the
+          building instead delivers all three things the piece has to accomplish, who
+          PENCIL is, what the MNPS partnership has produced, and why the wider community
+          should care, without stapling three segments together.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <div class="row">
+      <div class="rail">The production argument</div>
+      <div class="body">
+        <h2>One interview day should feed more than one film.</h2>
+        <p class="lede">
+          The crew, the room, the lighting, and the setup cost the same whether we record
+          five subjects or ten. The marginal cost of a sixth voice is thirty minutes.
+        </p>
+        <p class="sub">
+          So the recommendation is to overshoot the interview day on purpose. Board members,
+          leadership, community supporters, partners, parents. The campaign film uses what
+          it needs. Everything else becomes standalone social, landing page content, and the
+          material for a second film if that ever gets funded, without a second production
+          day being purchased later at full price.
+        </p>
+        <p class="sub">
+          Same logic on b-roll. Volunteer events, after-school programs, tutoring sessions,
+          and school appearances are already on PENCIL&rsquo;s calendar. We align shoot days
+          to events that are happening anyway and come away with a library, not just the
+          shots this cut needs.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="row full">
+      <div class="rail">Comparable work</div>
+      <div class="body">
+        <div class="samples">
+          <div class="sample feature">
+            <div class="frame">
+              <iframe src="https://galleries.vidflow.co/videos/omcuqfoj" title="NBIC Topgolf Fundraiser" loading="lazy" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+            </div>
+            <h3>NBIC, Topgolf Fundraiser</h3>
+            <p class="tagline">Fundraiser film, Nashville nonprofit</p>
+            <p>
+              The closest thing in our library to what PENCIL is asking for. A film whose
+              job is to move people toward giving, rather than to summarize something that
+              already happened.
+            </p>
+          </div>
+
+          <div class="sample">
+            <div class="frame">
+              <iframe src="https://galleries.vidflow.co/videos/y5dxgs87" title="FiftyForward 70th Anniversary Tribute" loading="lazy" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+            </div>
+            <h3>FiftyForward, 70th Anniversary Tribute</h3>
+            <p class="tagline">Anniversary film, Nashville nonprofit</p>
+            <p>
+              The direct comparison, and the one already named in conversation.
+              Institutional history carried by real voices, cut for a room of supporters
+              rather than a feed.
+            </p>
+          </div>
+
+          <div class="sample">
+            <div class="frame">
+              <iframe src="https://galleries.vidflow.co/videos/gw6od2v6" title="CFMT Gamechangers" loading="lazy" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+            </div>
+            <h3>Community Foundation of Middle Tennessee, Gamechangers</h3>
+            <p class="tagline">Honoree series, multi deliverable</p>
+            <p>
+              A full interview series built from concentrated shoot days, delivered as a
+              film plus a library of standalone cuts. The same production model proposed
+              here.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <div class="row">
+      <div class="rail">Sample interview questions</div>
+      <div class="body">
+        <h2>The questions that get the campaign its lines.</h2>
+        <p class="lede">
+          Written for this campaign, not pulled from a template. The final set is built
+          with you once the subject list is set.
+        </p>
+
+        <div class="qgroup">
+          <h3>Leadership</h3>
+          <ol>
+            <li>You have sat in this district as a teacher, as a parent, and on the board. What do you see from this seat that you could not see from those?</li>
+            <li>PENCIL covers 159 schools across 500 square miles. What does the range of need actually look like from one end of that map to the other?</li>
+            <li>What is PENCIL not able to do today because of the space you are in?</li>
+            <li>Why a building, and why now?</li>
+          </ol>
+        </div>
+
+        <div class="qgroup">
+          <h3>Board and major supporters</h3>
+          <ol>
+            <li>What made you say yes to PENCIL the first time?</li>
+            <li>When you talk about PENCIL to someone who has no children in Metro schools, what do you tell them?</li>
+            <li>You could put your time and your money almost anywhere in this city. Why here?</li>
+            <li>What would you want a donor to understand about this campaign before they decide?</li>
+          </ol>
+        </div>
+
+        <div class="qgroup">
+          <h3>Teachers and school partners</h3>
+          <ol>
+            <li>Walk me through the last time you shopped the DG PENCIL Box. What did you take, and what would you have done without it?</li>
+            <li>What does having a PENCIL Partner change about your school year?</li>
+            <li>What does it cost a teacher, in time or in money, when the resources are not there?</li>
+          </ol>
+        </div>
+
+        <div class="qgroup">
+          <h3>Volunteers and community</h3>
+          <ol>
+            <li>What do you actually do when you show up, and what do you get back?</li>
+            <li>You are not required to be involved in these schools. Why are you?</li>
+            <li>What would you say to someone in Nashville who thinks this is not their business?</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="row full">
+      <div class="rail">Investment</div>
+      <div class="body">
+        <h2 style="max-width:22ch;">Three ways to run it.</h2>
+        <p class="lede" style="max-width:38rem;margin-top:1.4rem;">
+          The middle tier is the scope described on our call. The first is the film alone.
+          The third leaves PENCIL with a campaign library instead of a campaign video.
+        </p>
+
+        <div class="tiers">
+          <div class="tier">
+            <div>
+              <div class="tag">Tier One</div>
+              <div class="name">The Campaign Film</div>
+            </div>
+            <div class="price">$6,500</div>
+            <ul>
+              <li>Campaign film, 2:30 to 3:00, finished and color graded</li>
+              <li>One interview day, up to five subjects</li>
+              <li>One b-roll day, aligned to a PENCIL event or program</li>
+              <li>Architectural renderings integrated as supplied</li>
+              <li>Three social cuts, :30 to :60, vertical and square</li>
+              <li>Licensed music and full sound mix</li>
+              <li>Two rounds of revisions</li>
+            </ul>
+          </div>
+
+          <div class="tier lead">
+            <div>
+              <div class="tag">Tier Two, recommended</div>
+              <div class="name">Film and Story Library</div>
+            </div>
+            <div class="price">$9,500</div>
+            <p class="carry">Everything in Tier One, plus</p>
+            <ul>
+              <li>Expanded interview day, up to ten subjects across board, leadership, partners, and community</li>
+              <li>Second b-roll day at a separate PENCIL event or school</li>
+              <li>Three standalone testimonial cuts, :60 to :90, built for social and landing pages</li>
+              <li>Six social cuts total</li>
+              <li>Full b-roll library delivered with an unlimited use license</li>
+              <li>Captions and subtitle files on all deliverables</li>
+            </ul>
+          </div>
+
+          <div class="tier">
+            <div>
+              <div class="tag">Tier Three</div>
+              <div class="name">Full Campaign Package</div>
+            </div>
+            <div class="price">$13,500</div>
+            <p class="carry">Everything in Tier Two, plus</p>
+            <ul>
+              <li>Second short film, :90, cut from the same material</li>
+              <li>Animated treatment of the architectural renderings</li>
+              <li>Third b-roll day</li>
+              <li>Ten social cuts total</li>
+              <li>Coverage of one campaign event</li>
+              <li>Asset refresh window, one additional cut within twelve months</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <div class="row">
+      <div class="rail">Terms</div>
+      <div class="body">
+        <h2>The business end.</h2>
+        <dl class="kv" style="margin-top:2rem;">
+          <div><dt>Deposit</dt><dd>50% to reserve production dates. Balance due at final delivery.</dd></div>
+          <div><dt>Revisions</dt><dd>Two rounds included on the campaign film. Additional rounds billed separately.</dd></div>
+          <div><dt>Student releases</dt><dd>PENCIL confirms image release documentation is on file with Metro before any identifiable student is filmed. No student is filmed without that confirmation.</dd></div>
+          <div><dt>Renderings</dt><dd>Supplied by PENCIL at print resolution or better. Static integration is included in every tier. Animated treatment is a Tier Three item.</dd></div>
+          <div><dt>Confidentiality</dt><dd>If the campaign is pre-launch, all footage, stills, and project details are held confidential. Nothing is published or shown publicly by Laws of Ace Films before PENCIL&rsquo;s own campaign launch.</dd></div>
+          <div><dt>Usage</dt><dd>PENCIL receives full unlimited use of all delivered material. Laws of Ace Films retains portfolio rights after the campaign goes public.</dd></div>
+          <div><dt>Travel</dt><dd>All shoot locations within Davidson County are included.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="row">
+      <div class="rail">To start</div>
+      <div class="body">
+        <h2>What we need from PENCIL.</h2>
+        <p class="lede">
+          Six items, none of them heavy. Most are already sitting with someone on the team.
+        </p>
+        <ul class="needs">
+          <li><span>Which former MNPS school is being rehabbed, and access to film it as it stands</span><span class="when">Before shoot</span></li>
+          <li><span>Campaign goal, and whether it sits alongside or inside the endowment push</span><span class="when">Before edit</span></li>
+          <li><span>Interview subject list, board and leadership and community</span><span class="when">Two weeks out</span></li>
+          <li><span>Architectural renderings, print resolution or better</span><span class="when">Before edit</span></li>
+          <li><span>Student image release confirmation, owner named on PENCIL&rsquo;s side</span><span class="when">Before shoot</span></li>
+          <li><span>Calendar of volunteer events and program days to align b-roll to</span><span class="when">On approval</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="invert">
+  <div class="wrap">
+    <div class="row">
+      <div class="rail">Next</div>
+      <div class="body">
+        <h2>Pick a tier and we will hold dates.</h2>
+        <p class="lede">
+          Contract and invoice go out the same day. Production dates are reserved on the
+          deposit, and we build the interview and b-roll calendar around PENCIL&rsquo;s
+          existing events.
+        </p>
+        <p class="signoff">
+          <b>Bryan Williams</b><br>
+          <span class="role">Laws of Ace Films LLC, Nashville</span><br>
+          <a href="mailto:lawsofacefilms@gmail.com">lawsofacefilms@gmail.com</a><br>
+          <span class="role">MBE and SBE registered vendor, Metro Nashville Public Schools</span>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="colophon-end">
+      <span>Laws of Ace Films LLC</span>
+      <span>Prepared for PENCIL Foundation, care of Jacqui Hayes, Crayons &amp; Marketers</span>
+      <span>September 2026</span>
+      <span>Confidential</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
