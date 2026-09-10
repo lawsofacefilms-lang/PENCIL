@@ -254,6 +254,23 @@
     font-variant-numeric: tabular-nums; padding-top: 0.24rem;
   }
 
+  /* ---------- numbered process ---------- */
+
+  .steps { margin: 2rem 0 0; padding: 0; list-style: none; counter-reset: s; }
+  .steps li {
+    counter-increment: s; position: relative;
+    padding: 0.95rem 0 0.95rem 2.4rem; border-bottom: 1px solid var(--rule-hair);
+    font-size: 1rem; line-height: 1.5; color: var(--ink-2);
+  }
+  .steps li:first-child { border-top: 1px solid var(--rule); }
+  .steps li::before {
+    content: counter(s, decimal-leading-zero);
+    position: absolute; left: 0; top: 1.2rem;
+    font-size: 0.75rem; font-weight: 600; color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .steps b { font-weight: 600; color: var(--ink); }
+
   /* ---------- tiers ---------- */
 
   .tiers {
@@ -399,6 +416,36 @@
 
 <section>
   <div class="wrap">
+    <div class="row">
+      <div class="rail">The brief</div>
+      <div class="body">
+        <h2>What you asked for.</h2>
+        <dl class="kv" style="margin-top:2rem;">
+          <div>
+            <dt>Deliverables</dt>
+            <dd>A capital campaign film, 2:30 to 3:00. Social snippets cut from the same
+            material. A b-roll library for landing pages and other campaign uses.</dd>
+          </div>
+          <div>
+            <dt>The arc</dt>
+            <dd>Who PENCIL is. How much has been done in partnership with Metro Nashville
+            Public Schools. Outgrowing the current space and moving into a new building.
+            The rehab of a former MNPS school, including the building as it stands and the
+            architectural renderings. Testimonials peppered through from leadership, board
+            members and community supporters. Out on a call to action to support the
+            campaign.</dd>
+          </div>
+          <div>
+            <dt>The requirement</dt>
+            <dd>Cultural awareness across a district this size. Everyone should feel seen
+            and represented. Diversity across Metro Nashville, not only race and background
+            but diversity of need from school to school. A community member with no
+            children in Metro schools should still resonate with it.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
     <div class="row">
       <div class="rail">The film</div>
       <div class="body">
@@ -641,6 +688,30 @@
             </ul>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="row">
+      <div class="rail">How it runs</div>
+      <div class="body">
+        <h2>What happens after you say yes.</h2>
+        <p class="lede">
+          Seven steps. Most of the weight sits on our side, and the two that need PENCIL
+          are the two we flag early.
+        </p>
+        <ol class="steps">
+          <li><b>Contract and invoice, same day.</b> Production dates are reserved on the deposit, not before.</li>
+          <li><b>Question set and subject list.</b> Built with you and confirmed before anyone is scheduled.</li>
+          <li><b>Interview day.</b> Every voice recorded in one day, in one room, under one lighting setup.</li>
+          <li><b>B-roll days.</b> Scheduled against PENCIL events and school days already on your calendar.</li>
+          <li><b>First cut, two weeks after the last shoot day.</b> Expedited to one week for $1,200 if the campaign calendar requires it.</li>
+          <li><b>Two rounds of notes.</b> One consolidated set of feedback per round, from your single point of contact.</li>
+          <li><b>Delivery.</b> Campaign film, social cuts and the b-roll library, delivered together.</li>
+        </ol>
       </div>
     </div>
   </div>
